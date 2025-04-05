@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Red Book – Feedback Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('17438503054767896936197180352132.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.96);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 500px;
+      position: relative;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      color: #b20000;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #222;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 15px;
+      display: block;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #fff;
+    }
+
+    button {
+      background-color: #0072ff;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #005fd2;
+    }
+
+    .success-message {
+      display: none;
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <form id="feedbackForm" action="https://formsubmit.co/sivu967@gmail.com" method="POST">
+    <h1>The Red Book</h1>
+    <h2>Feedback Form</h2>
+
+    <!-- Anti-spam hidden input for FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://thankyoupage.com"> <!-- Optional redirect -->
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="Name" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="Email" required />
+
+    <label for="rating">Rating:</label>
+    <select id="rating" name="Rating" required>
+      <option value="" disabled selected>Select rating</option>
+      <option value="5">Excellent</option>
+      <option value="4">Good</option>
+      <option value="3">Average</option>
+      <option value="2">Poor</option>
+      <option value="1">Very Poor</option>
+    </select>
+
+    <label for="comments">Comments:</label>
+    <textarea id="comments" name="Comments" rows="4" placeholder="Write your feedback here..."></textarea>
+
+    <button type="submit">Submit Feedback</button>
+
+    <div class="success-message" id="successMessage">Feedback submitted successfully!</div>
+  </form>
+
+  <script>
+    const form = document.getElementById("feedbackForm");
+    const successMsg = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function(event) {
+      successMsg.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
